@@ -145,7 +145,8 @@ public class AuthController {
                 .httpOnly(true)
                 .path("/")
                 .maxAge(Duration.ofSeconds(maxAge))
-                .sameSite("Lax")
+                .sameSite("None")
+                .secure(true)
                 .build();
         response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
     }
